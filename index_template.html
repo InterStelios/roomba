@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Roomba</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+  <div class="container">
+    <div class="details">
+      <input type="range" min="1" max="20" value="10" step="1" id="x-range" />
+      <input type="range" min="1" max="20" value="10" step="1" id="y-range" />
+      <span id="mouse">Mouse (0,0)</span>
+      <span id="robot">Robot (/)</span>
+      <span id="patches">Patches: (0)</span>
+    </div>
+    <canvas tabindex="1" id="canvas" width="600" height="600"></canvas>
+    <div class="details">
+      <div id="grid">Grid N x N </div>
+    </div>
+  </div>
+</body>
+
+</html>
