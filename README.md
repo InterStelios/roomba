@@ -6,7 +6,9 @@
  - node: ~=v5.12.0
  - npm: ~=3.8.6
 
-_Note: One of the project dependencies is [fabric](http://fabricjs.com/) and it is currently in a transition period over to v2. The tests run properly only with node v5 as other v6+ is out of scope for fabric v1._
+**Note 1:** One of the project dependencies is [fabric](http://fabricjs.com/) and it is currently in a transition period over to v2. The tests run properly only with node v5 as other v6+ is out of scope for fabric v1. 
+
+**Note 2:** [fabric](http://fabricjs.com/) requires an old version of JSDOM for testing under node which requires [Python 2.7](https://www.python.org/download/releases/2.7/). If you want to run the tests under Windows/Linux you will need to install Python seperetely; MacOS is fine.
 
 **Supported browsers:**
 
