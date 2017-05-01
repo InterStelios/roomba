@@ -6,7 +6,7 @@
  - node: ~=v5.12.0
  - npm: ~=3.8.6
 
-**Note 1:** One of the project dependencies is [fabric](http://fabricjs.com/) and it is currently in a transition period over to v2. The tests run properly only with node v5 as other v6+ is out of scope for fabric v1.
+**Note 1:** One of the project dependencies is [fabric](http://fabricjs.com/) and it is currently in a transition period over to v2. The tests run properly only with node v5 as v6+ is out of scope for fabric v1.
 
 **Note 2:** [fabric](http://fabricjs.com/) requires an old version of JSDOM for testing under node which requires [Python 2.7](https://www.python.org/download/releases/2.7/). If you want to run the tests under Windows/Linux you will need to install Python seperetely; MacOS is fine.
 
@@ -38,7 +38,7 @@ The app is running on [localhost:8080](localhost:8080)
 **Running project tests:**
 
     npm test
-    npm test-watch
+    npm run test-watch
 
 _See test output at the end of the readme._
 
@@ -50,10 +50,11 @@ _See test output at the end of the readme._
  4. The location of the patches can be specified by clicking anywhere on the grid. A patch is indicated by a grey colour on the tile. The panel also shows the patches left **Patches (11)** and the patches hoovered **Patches cleaned (2)**.
 
 **Assumptions:**
-1. Patches cannot be placed on robots.
+1. When a patch is placed on the robot, the patch is immediately cleared.
 2. When a robot is placed on a patch using the mouse, the patch is immediately cleared.
 3. Minimum room size is (1, 1).
 3. Maximum room size is (20, 20).
+4. The default surface size is 10 x 10.
 
 **Notes:**
 1. The default DOM range sliders are used for simplicity. Ideally, we should use a more extensive range slider library which will indicate the selected values (the ticks).
