@@ -1,6 +1,13 @@
 export default ($mouse, surface) => {
   const $canvas = surface.canvas.lowerCanvasEl;
 
+  const cleanIfDirty = surface => {
+    if (surface.robot) {
+      const cell = surface.getCellAt(surface.robot.left, surface.robot.top);
+      return cell.properties.dirty ? cell.execute('clean') : cell;
+    }
+  };
+
   // Displays cell coordinates according to the mouse position.
   $canvas.addEventListener('mousemove', ({ offsetX, offsetY }) => {
     if (surface.isWithinBoundaries(offsetX, offsetY)) {
@@ -14,15 +21,11 @@ export default ($mouse, surface) => {
   $canvas.addEventListener('click', ({ offsetX, offsetY, shiftKey }) => {
     if (shiftKey) {
       surface.setRobot(offsetX, offsetY);
-      return surface
-        .getCellAt(surface.robot.left, surface.robot.top)
-        .execute('clean');
+      return cleanIfDirty(surface);
     }
 
     surface.getCellAt(offsetX, offsetY).execute('dirt');
 
-    if (surface.robot) {
-      surface.getCellAt(surface.robot.left, surface.robot.top).execute('clean');
-    }
+    cleanIfDirty(surface);
   });
 };

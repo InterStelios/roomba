@@ -4,6 +4,11 @@ const updateNumberOfDirtPatches = (surface, $patches) => {
   $patches.innerHTML = `Patches (${dirtPatches})`;
 };
 
+let patchesCleaned = 0;
+const updateNumberOfDirtPatchesCleaned = $patchesCleaned => {
+  $patchesCleaned.innerHTML = `Patches cleaned (${++patchesCleaned})`;
+};
+
 const updateRobotPosition = (surface, $robot) => {
   const { robot, convertPositionToCoords } = surface;
   if (robot) {
@@ -23,17 +28,16 @@ const updateDisplay = (surface, $patches, $robot, $grid) => {
   updateGridDimensions(surface, $grid);
 };
 
-export default (canvas, $patches, $robot, $grid, surface) => {
+export default (canvas, $patches, $patchesCleaned, $robot, $grid, surface) => {
   updateDisplay(surface, $patches, $robot, $grid);
   // Updates the number of dirt patches, the robot position and the grid dimensions,
   // each time that any object is modified.
   canvas.on({
-    'object:modified': updateDisplay.bind(
-      null,
-      surface,
-      $patches,
-      $robot,
-      $grid
-    ),
+    'object:modified': ({ action }) => {
+      if (action === 'clean') {
+        updateNumberOfDirtPatchesCleaned($patchesCleaned);
+      }
+      updateDisplay(surface, $patches, $robot, $grid);
+    },
   });
 };

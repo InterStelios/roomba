@@ -6,7 +6,7 @@
  - node: ~=v5.12.0
  - npm: ~=3.8.6
 
-**Note 1:** One of the project dependencies is [fabric](http://fabricjs.com/) and it is currently in a transition period over to v2. The tests run properly only with node v5 as other v6+ is out of scope for fabric v1. 
+**Note 1:** One of the project dependencies is [fabric](http://fabricjs.com/) and it is currently in a transition period over to v2. The tests run properly only with node v5 as other v6+ is out of scope for fabric v1.
 
 **Note 2:** [fabric](http://fabricjs.com/) requires an old version of JSDOM for testing under node which requires [Python 2.7](https://www.python.org/download/releases/2.7/). If you want to run the tests under Windows/Linux you will need to install Python seperetely; MacOS is fine.
 
@@ -47,7 +47,7 @@ _See test output at the end of the readme._
  1. The room dimensions are specified by the sliders; left slider for X and right slider for Y coordinates. The dimensions are indicated by the grid size at the bottom left of the panel,  **Grid 10 x 10**.
  2. The location of the robot can be specified by clicking anywhere on the grid while holding down **Shift**. The coordinates of the mouse are indicated in the top panel, **Mouse (9, 8)**.
  3. The robot can be moved using the **arrow** keys and its position is also displayed and updated while the robot is moving **Robot (6, 6)**.
- 4. The location of the patches can be specified by clicking anywhere on the grid. A patch is indicated by a grey colour on the tile. The panel also shows the patches left **Patches (11)**.
+ 4. The location of the patches can be specified by clicking anywhere on the grid. A patch is indicated by a grey colour on the tile. The panel also shows the patches left **Patches (11)** and the patches hoovered **Patches cleaned (2)**.
 
 **Assumptions:**
 1. Patches cannot be placed on robots.

@@ -14,6 +14,7 @@ const surface = new Surface(canvas, { x: 10, y: 10 });
 // Elements that display useful information.
 const $mouse = document.querySelector('#mouse');
 const $patches = document.querySelector('#patches');
+const $patchesCleaned = document.querySelector('#patches-cleaned');
 const $robot = document.querySelector('#robot');
 const $xRange = document.querySelector('#x-range');
 const $yRange = document.querySelector('#y-range');
@@ -21,5 +22,5 @@ const $grid = document.querySelector('#grid');
 
 mouseInput($mouse, surface);
 keyboardInput(surface);
-detailsInput(canvas, $patches, $robot, $grid, surface);
+detailsInput(canvas, $patches, $patchesCleaned, $robot, $grid, surface);
 sliderInput($xRange, $yRange, surface);

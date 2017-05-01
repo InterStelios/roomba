@@ -15,9 +15,10 @@ export default surface => {
     // Execute only if an arrow key was pressed.
     if (move) {
       robot.execute(move);
-
-      // Always clean current cell of the robot.
-      surface.getCellAt(robot.left, robot.top).execute('clean');
+      const cell = surface.getCellAt(robot.left, robot.top);
+      if (cell.properties.dirty) {
+        cell.execute('clean');
+      }
     }
   });
 };

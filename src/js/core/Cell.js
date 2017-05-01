@@ -42,7 +42,7 @@ export default class Cell extends fabric.Rect {
         nextAction.objectProperties
       );
 
-      this.canvas.trigger('object:modified');
+      this.canvas.trigger('object:modified', { action });
       return this;
     }
     return this;

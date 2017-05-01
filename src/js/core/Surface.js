@@ -146,6 +146,7 @@ export default class Surface {
     });
 
     this.canvas.add(this.robot);
+    this.canvas.trigger('object:modified');
     return this.robot;
   }
 
